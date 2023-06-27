@@ -33,6 +33,15 @@ const initialState = {
           loading: false,
           error: null,
         };
+        case 'EDIT_USER':
+        return {
+        ...state,
+        users: state.users.map((user) =>
+          user.id === action.payload.id
+            ? { ...user, name: action.payload.name }
+            : user
+        ),
+      };
       default:
         return state;
     }

@@ -15,3 +15,9 @@ export const fetchUsers = () => {
 export const deleteUser = (id) => {
   return { type: 'DELETE_USER', payload: id };
 };
+
+export const editUser = (id, name) => (
+  {
+  type: 'EDIT_USER',
+  payload: { id, name },
+});
